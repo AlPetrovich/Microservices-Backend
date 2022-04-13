@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -40,6 +41,8 @@ public class UserController {
         return ResponseEntity.ok(saveUser);
     }
 
+    //------------RestTemplate------------------
+
     @GetMapping("/cars/{userId}")
     public ResponseEntity<List<Car>> listCars(@PathVariable("userId") Integer userId){
         //obtenemos el usuario
@@ -62,6 +65,26 @@ public class UserController {
         //obtenemos los autos del usuario
         List<Motorcycle> motorcycles = userService.getMotorcycles(userId);
         return ResponseEntity.ok(motorcycles);
+    }
+
+    //-------------------Cliente Feign ------------
+
+    @PostMapping("/cars/{userId}")
+    public ResponseEntity<Car> saveCar(@PathVariable("userId") Integer userId, @RequestBody Car car){
+        Car newCar = userService.saveCar(userId, car);
+        return ResponseEntity.ok(newCar);
+    }
+
+    @PostMapping("/motorcycle/{userId}")
+    public ResponseEntity<Motorcycle> saveMotorcycle(@PathVariable("userId") Integer userId, @RequestBody Motorcycle motorcycle){
+        Motorcycle newMotorcycle = userService.saveMotorcycle(userId, motorcycle);
+        return ResponseEntity.ok(newMotorcycle);
+    }
+
+    @GetMapping("/vehicles/{userId}")
+    public ResponseEntity<Map<String, Object>> getUserAndVehiclesById(@PathVariable("userId") Integer userId){
+        Map<String, Object> vehicles = userService.getUserAndVehiclesById(userId);
+        return ResponseEntity.ok(vehicles);
     }
 
 }

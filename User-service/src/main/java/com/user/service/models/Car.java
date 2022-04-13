@@ -12,5 +12,7 @@ public class Car {
 
     private String brand;
     private String model;
+    //trabajo con feign
+    private Integer userId;
 
 }
