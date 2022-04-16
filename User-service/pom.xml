@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>user-service</groupId>
 	<artifactId>User-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>User-service</name>
 	<description>Version 1.0</description>
 	<properties>
@@ -51,25 +51,21 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
-			<version>3.1.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
-			<version>3.1.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bootstrap</artifactId>
-			<version>3.1.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-			<version>3.1.1</version>
 		</dependency>
 
 	</dependencies>
