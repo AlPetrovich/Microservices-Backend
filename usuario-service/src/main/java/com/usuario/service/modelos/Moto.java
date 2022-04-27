@@ -34,4 +34,14 @@ public class Moto {
 		super();
 	}
 
+	public Moto(String marca, String modelo, int usuarioId) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.usuarioId = usuarioId;
+	}
+
+	public Moto(String marca, String modelo) {
+		this.marca = marca;
+		this.modelo = modelo;
+	}
 }
