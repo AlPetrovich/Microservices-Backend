@@ -8,7 +8,8 @@ import java.util.List;
 //server.port=8082
 //spring.application.name=car-service
 //cliente feign, nombre del microservicio y su url para acceder a sus metodos
-@FeignClient(name = "car-service", url = "http://localhost:8082/api/cars")
+@FeignClient(name = "car-service")
+@RequestMapping("/car")
 public interface CarFeignClient {
 
     @PostMapping()
